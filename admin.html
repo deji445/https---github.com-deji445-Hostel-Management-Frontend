@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <header class="app-bar">
+    <h1 class="app-title">Admin Dashboard</h1>
+    <button id="logout-btn" class="btn btn-logout">Logout</button>
+  </header>
+
+  <div class="dashboard-container">
+    <!-- Create Room -->
+    <section>
+      <h2>Create Room</h2>
+      <div class="card">
+        <form id="room-form">
+          <input 
+            name="hostel_id" id="hostel_id" 
+            type="number" placeholder="Hostel ID" min="1" required
+          >
+          <input 
+            name="room_number" id="room_number" 
+            type="text" placeholder="Room #" required
+          >
+          <input
+            name="capacity" id="capacity"
+            type="number" placeholder="Capacity" min="1" required
+          >
+        
+          <label for="photo">Photo</label>
+          <select name="photo" id="photo" required>
+            <option value="">— pick an image —</option>
+            <option value="/images/img1.webp">img1.webp</option>
+            <option value="/images/img2.jpeg">img2.jpeg</option>
+            <option value="/images/img3.webp">img3.webp</option>
+            <option value="/images/img4.jpg">img4.jpg</option>
+            <option value="/images/img5.jpeg">img5.jpeg</option>
+          </select>
+        
+          <input 
+            name="description" id="description"
+            type="text" placeholder="Description"
+          >
+        
+          <button type="submit">Add Room</button>
+        </form>
+        <p id="room-msg" class="msg"></p>
+      </div>
+    </section>
+  <!-- ───────────── Hostels Management ───────────── -->
+  <section>
+    <h2>Add Hostel</h2>
+    <div class="card">
+    <form id="hostel-form">
+      <input type="text" id="hostel-name" placeholder="Hostel Name" required>
+      <input type="text" id="hostel-desc" placeholder="Description">
+      <button type="submit">Add Hostel</button>
+    </form>
+    <table id="hostels-table" class="apps-table">
+      <thead>
+        <tr><th>ID</th><th>Name</th><th>Description</th><th>Actions</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  </section>
+
+  <!-- ─────────── Assigned Students ─────────── -->
+  <section>
+    <h2>Allotted Students</h2>
+    <div class="card">
+    <table id="assigned-table" class="apps-table">
+      <thead>
+        <tr><th>Student</th><th>Room</th><th>Hostel</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  </section>
+
+  <!-- List & Edit Rooms -->
+  <section>
+    <h2>All Rooms</h2>
+    <div class="card">
+    <table id="rooms-table">
+      <thead>
+        <tr>
+          <th>ID</th><th>Hostel</th><th>Number</th><th>Capacity</th><th>Occupants</th><th>Status</th><th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  </section>
+
+  <!-- ─────────── Applications Management ─────────── -->
+<section>
+  <h2>Applications</h2>
+  <div class="card">
+
+  <!-- Filter buttons -->
+  <div id="apps-filter" class="apps-filter">
+    <button data-status="all" class="active">All</button>
+    <button data-status="pending">Pending</button>
+    <button data-status="accepted">Accepted</button>
+    <button data-status="rejected">Rejected</button>
+  </div>
+
+  <!-- Unified apps table -->
+  <table id="apps-table" class="apps-table">
+    <thead>
+      <tr>
+        <th>Student</th>
+        <th>Room</th>
+        <th>Hostel</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+</section>
+
+  <script src="js/app.js"></script>
+  <script src="js/admin.js"></script>
+</div>
+<!-- Edit Modal (shared by Rooms & Hostels) -->
+<div id="edit-modal" class="modal-overlay" style="display:none;">
+  <div class="modal">
+    <h3 id="modal-title">Edit</h3>
+    <form id="modal-form">
+      <!-- dynamic fields will go here -->
+      <div id="modal-fields"></div>
+      <div class="modal-actions">
+        <button type="submit">Save</button>
+        <button type="button" id="modal-cancel">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>

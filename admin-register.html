@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Register Admin</title>
+  <link rel="stylesheet" href="/css/login.css" />
+</head>
+<body>
+  <div class="login-box">
+    <h1>Admin Sign-Up</h1>
+    <form id="admin-register-form">
+      <input type="text" id="name"        name="name"        placeholder="Full Name" required />
+      <input type="email" id="email"      name="email"       placeholder="Email"     required />
+      <input type="password" id="password" name="password"    placeholder="Password"  required />
+      <input type="text" id="code"        name="code"        placeholder="Admin Code" required />
+      <button type="submit">Create Admin</button>
+    </form>
+    <p id="admin-register-error" class="error"></p>
+    <p class="alt-action">
+      Already have an account? <a href="index.html">Log in</a>
+    </p>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script>
+    document
+      .getElementById('admin-register-form')
+      .addEventListener('submit', async e => {
+        e.preventDefault();
+        const name     = e.target.name.value.trim();
+        const email    = e.target.email.value.trim();
+        const password = e.target.password.value;
+        const code     = e.target.code.value.trim();
+        try {
+          // call your new register-admin endpoint
+          const data = await request('/auth/register-admin', {
+            method: 'POST',
+            body: { name, email, password, code },
+            auth: false
+          });
+          // store token & redirect
+          localStorage.setItem('token', data.token);
+          window.location = 'admin.html';
+        } catch (err) {
+          document.getElementById('admin-register-error').textContent = err.message;
+        }
+      });
+  </script>
+</body>
+</html>

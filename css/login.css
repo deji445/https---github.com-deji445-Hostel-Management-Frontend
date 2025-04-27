@@ -1,0 +1,96 @@
+
+body {
+    background: url('/images/ryan-jacobson-cXUOQWdRV4I-unsplash.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: sans-serif;
+  }
+  .login-box {
+    max-width: 320px;
+    margin: 100px auto;
+    padding: 1.5rem;
+    background: #e4e2e2dc;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 1;
+  }
+  .login-box h1 {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .login-box input {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    box-sizing: border-box;
+  }
+  .login-box button {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 1rem;
+  }
+  .error {
+    color: #c00;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+  
+  .alt-action {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .alt-action a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  .alt-action a:hover {
+    text-decoration: underline;
+  }
+  .alt-action a:visited {
+    color: #0056b3;
+  }
+  
+  
+  .password-wrapper {
+    display: flex;
+    flex-direction: column;   
+    align-items: flex-end;   
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  
+  .password-wrapper input[type="password"] {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .password-toggle {
+    display: flex;            
+    align-items: flex-end;
+    margin-top: 0.25rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  
+  
+  .password-toggle input {
+    margin-left: 0.5rem;
+  }
+
+  .login-wrapper {
+    position: fixed;   
+    inset: 0;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .login-wrapper::before {
+    content: "";
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 0;
+  }
+  
+
+  

@@ -1,0 +1,325 @@
+:root {
+  --clr-primary: #007bff;
+  --shadow-light: 0 2px 6px rgba(0,0,0,0.1);
+  --shadow-lift:  0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* ───────────────────────────────────────────────────────────────────────────────
+   Card utility: white card with lift on hover
+────────────────────────────────────────────────────────────────────────────── */
+.card {
+  background: #ffffff25;
+  border-radius: 6px;
+  box-shadow: var(--shadow-light);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  padding: 1rem 1.5rem;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+}
+
+/* ==========================================================================  
+   Base & Layout  
+============================================================================= */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+  color: #333;
+  background: url('/images/img7.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.app-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 60px;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  z-index: 100;
+}
+
+.dashboard-container {
+  max-width: 1200px;
+  margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.5rem;
+  background: rgba(255,255,255,0.52);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ==========================================================================  
+   Utility Buttons  
+============================================================================= */
+button {
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+/* Logout */
+.btn-logout {
+  background: #e74c3c;
+  border: none;
+  color: #fff;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+.btn-logout:hover {
+  background: #c0392b;
+}
+
+/* General form & table buttons */
+form button,
+.apps-table button,
+table#rooms-table button {
+  background: var(--clr-primary);
+  border: 1px solid var(--clr-primary);
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+form button:hover,
+.apps-table button:hover,
+table#rooms-table button:hover {
+  background: #0056b3;
+}
+
+/* ==========================================================================  
+   Headings & Sections  
+============================================================================= */
+h1, h2 {
+  margin: 1.5rem 0 1rem;
+}
+section {
+  margin-bottom: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+/* ==========================================================================  
+   Forms  
+============================================================================= */
+/* Create Room form */
+form#room-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+  align-items: end;
+  background: #f0eded;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: var(--shadow-light);
+}
+form#room-form .form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+
+form#room-form .form-group label {
+  margin-bottom: .3rem;
+  font-weight: bold;
+}
+form#room-form input,
+form#room-form button {
+  padding: 0.5rem;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+
+#modal-fields > div {
+  margin-bottom: 1rem;
+}
+#modal-fields label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+#modal-fields input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* ==========================================================================  
+   Tables  
+============================================================================= */
+/* Rooms & Applications tables */
+table#rooms-table,
+.apps-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+}
+table#rooms-table th, table#rooms-table td,
+.apps-table th,   .apps-table td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ddd;
+}
+table#rooms-table thead,
+.apps-table thead {
+  background: #f0f0f0;
+}
+table#rooms-table tbody tr:nth-child(odd),
+.apps-table tbody tr:nth-child(odd) {
+  background: #fafafa;
+}
+table#rooms-table tbody tr:hover,
+.apps-table tbody tr:hover {
+  background: #f5f5f5;
+}
+table#rooms-table th,
+.apps-table th {
+  text-align: left;
+}
+table#rooms-table td:last-child,
+.apps-table td:last-child {
+  text-align: right;
+}
+
+/* Status badges */
+.status-badge {
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  text-transform: capitalize;
+  font-size: 0.9rem;
+}
+.status-badge.accepted {
+  background: #d4edda;
+  color: #155724;
+}
+.status-badge.rejected {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* ==========================================================================  
+   Applications Filter Bar  
+============================================================================= */
+#apps-filter {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+#apps-filter button {
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 0.4rem 0.8rem;
+  margin-right: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+#apps-filter button:hover {
+  background: #e0e0e0;
+}
+#apps-filter button.active {
+  background: var(--clr-primary);
+  color: #fff;
+  border-color: var(--clr-primary);
+}
+
+/* ==========================================================================  
+   Responsive Tweaks  
+============================================================================= */
+@media (max-width: 768px) {
+  form#room-form {
+    grid-template-columns: 1fr;
+  }
+  table#rooms-table,
+  .apps-table,
+  table#rooms-table thead,
+  .apps-table thead,
+  table#rooms-table tbody,
+  .apps-table tbody,
+  table#rooms-table tr,
+  .apps-table tr,
+  table#rooms-table th,
+  .apps-table th,
+  table#rooms-table td,
+  .apps-table td {
+    display: block;
+  }
+  table#rooms-table thead,
+  .apps-table thead {
+    display: none;
+  }
+  table#rooms-table tr,
+  .apps-table tr {
+    margin-bottom: 1rem;
+  }
+  table#rooms-table td,
+  .apps-table td {
+    position: relative;
+    padding-left: 50%;
+    text-align: right;
+  }
+  table#rooms-table td::before,
+  .apps-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 0.75rem;
+    font-weight: bold;
+    text-align: left;
+  }
+}
+
+/* ==========================================================================  
+   Modal Overlay & Actions  
+============================================================================= */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 6px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: var(--shadow-light);
+}
+.modal-actions {
+  text-align: right;
+}
+.modal-actions button {
+  margin-left: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+}
+.modal-actions button[type="submit"] {
+  background: var(--clr-primary);
+  color: #fff;
+}
+.modal-actions button#modal-cancel {
+  background: #ccc;
+  color: #333;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="/css/student.css">
+</head>
+<body>
+  <header class="app-bar">
+    <h1>Student Dashboard</h1>
+    <button id="logout-btn" class="btn btn-logout">Logout</button>
+  </header>
+
+  <div class="dashboard-container">
+    
+    <h3 id="greeting" class="greeting">Welcome!</h3>
+
+    <!--  Notifications section in its own “card” -->
+    <section>
+      <h2>Notifications🔔</h2>
+      <div id="notifications-card" class="assigned-card">
+        <ul id="notification-list" class="notification-list"></ul>
+        <button id="toggle-notifs" class="view-all">View All</button>
+      </div>
+    </section>
+
+    <!--  Available Rooms -->
+    <section>
+      <h2>Available Rooms:</h2>
+      <div id="rooms-container" class="rooms-container">
+        <!-- JS will inject .room-card elements here -->
+      </div>
+    </section>
+
+    <!--  Assigned Room -->
+    <section>
+      <h2>Your Assigned Room:</h2>
+      <div id="assigned-info" class="assigned-card">
+        No room assigned yet.
+      </div>
+    </section>
+
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/student.js"></script>
+</body>
+</html>
