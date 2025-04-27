@@ -29,14 +29,23 @@ body {
   position: fixed;
   top: 0; left: 0; right: 0;
   height: 60px;
-  padding: 0 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 1.5rem;
   background: rgba(0,0,0,0.6);
   color: #fff;
-  z-index: 100;
+  z-index: 1000;
 }
+.app-title {
+  font-size: 1.5rem;
+}
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 1.2rem;
+  }
+}
+
 
 /* ───────────────────────────────────────────────────────────────────────────────
    Dashboard Container
@@ -78,9 +87,9 @@ body {
   background: #e74c3c;
   border: none;
   color: #fff;
-  padding: 0.4rem 1rem;
+  padding: 0.3rem 0.8rem;
   border-radius: 4px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 .btn-logout:hover {
   background: #c0392b;
@@ -233,6 +242,7 @@ h2 {
   min-height: 100vh;
   padding: 1rem;
   box-sizing: border-box;
+  padding-top: 60px; 
 }
 
 /* ensure cards/forms inside scale */

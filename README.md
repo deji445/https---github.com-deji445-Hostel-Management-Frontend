@@ -58,7 +58,11 @@
 
 -----the Admin Workflow-----
 
---Login with the only admin username and password (username-any///password-any for###admim-code###- use- letmein123) you can find it in .env
+  username-any
+
+  password-should not be less than 6 characters for
+
+  ###admim-code###- use- letmein123-----you can find it in .env
 
 Create Room: fill hostel_id, room_number, capacity, select from image dropdown, description
 
