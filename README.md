@@ -58,7 +58,7 @@
 
 -----the Admin Workflow-----
 
--Login with the only admin username and password (username-admin@yourdomain.com///password-MySecretAdminPass)
+--Login with the only admin username and password (username-any///password-any for###admim-code###- use- letmein123) you can find it in .env
 
 Create Room: fill hostel_id, room_number, capacity, select from image dropdown, description
 
@@ -77,33 +77,38 @@ Delete Room: click “Delete” (only if no conflicting occupancy)
 
 -----How to run locally-----
 
-##---how to start the backend----
+###---How to run locally-----
+
+#---how to start the backend----
 
 --since you have acces to the github repo
-1-clone and install with the following
--git clone <Hostel-management-Backend>
--npm install
 
-2-configure your database (postgres)
-you can create the tables with the sql code.txt in the repo
--ensure server name is hostel_management
-you can check .env for the url
+1-clone or open the the folder on your local machine
+-git clone <Hostel-management-Backend>
+
+ you can also change the "DATABASE_URL" and use your own postgres (all sql query's are stated in sql code.txt) 
 
 3-to start the server- npm run dev  
 
 
-##---how to start the frontend----
-1-clone and install //in a separate terminal where the frontend is: 
-npm install -g http-server      # if you don’t already have it
-http-server . -p 8080
+#---how to start the frontend----
+1-clone or install in a separate terminal 
+run---http-server . -p 8080
 
----in app.js its already set to
+---in app.js you have to set it to
 const API_BASE = 'http://localhost:5000/api';
 
 after running: http-server . -p 8080 you would see to servers select the second one 
 ( http://127.0.0.1:8080)
 
 and everything should work, hopefully.
+
+
+after running: http-server . -p 8080 you would see to servers select the second one 
+( http://127.0.0.1:8080)
+
+and everything should work, hopefully.
+### note to create an admin account the admin code is letmein123
 
 ---------------------------
 
