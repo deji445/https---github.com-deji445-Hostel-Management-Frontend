@@ -1,5 +1,6 @@
 
 body {
+    margin: 0;
     background: url('/images/ryan-jacobson-cXUOQWdRV4I-unsplash.jpg') no-repeat center center fixed;
     background-size: cover;
     font-family: sans-serif;
@@ -78,12 +79,18 @@ body {
   }
 
   .login-wrapper {
-    position: fixed;   
-    inset: 0;   
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    padding: 1rem;           /* small padding so box never touches edges */
+    box-sizing: border-box;
+  }
+  @media (max-height: 500px) {
+    .login-box {
+      margin: 1rem auto;
+      padding: 1rem;
+    }
   }
   .login-wrapper::before {
     content: "";
